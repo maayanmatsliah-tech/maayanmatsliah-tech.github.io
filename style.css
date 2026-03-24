@@ -181,15 +181,15 @@ a:hover {
 
 /* Add your actual screenshots here */
 #trash-project {
-    background-image: url('trash-demo.jpg');
+    background-image: url('marine_life_icon.jpg');
 }
 
 #expense-tracker {
-    background-image: url('expense-demo.jpg');
+    background-image: url('expense-tracker.jpg');
 }
 
 #portfolio-site {
-    background-image: url('site-demo.jpg');
+    background-image: url('self_site.png');
 }
 
 .project-info {
