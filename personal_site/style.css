@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    padding: 80px 20px;
+    /* A very subtle blue-to-white gradient makes it look "designed" */
+    background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+    /* "Inter" or System Sans-Serif is the gold standard for professional sites */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #2d3436;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    /* This adds a very slight fade-in effect when the page loads */
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #ffffff;
+    /* White ring */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Soft shadow under the photo */
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    /* Tighter letters look more premium */
+    margin-bottom: 5px;
+    color: #0984e3;
+    /* A vibrant professional blue */
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #636e72;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.info-list {
+    text-align: left;
+    display: inline-block;
+    list-style: none;
+    /* No dots */
+    padding: 0;
+}
+
+.info-list li {
+    margin-bottom: 18px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+}
+
+/* This adds a colorful "check" or "bullet" before each item */
+.info-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #0984e3;
+    font-weight: bold;
+}
+
+a {
+    color: #0984e3;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(9, 132, 227, 0.2);
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    background: rgba(9, 132, 227, 0.1);
+    border-bottom: 2px solid #0984e3;
+}
+
+.email {
+    margin-top: 60px;
+    font-weight: 600;
+    color: #b2bec3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.email-container {
+    margin-top: 60px;
+    border-top: 1px solid #eee;
+    /* Keeps that nice separation line */
+    padding-top: 20px;
+}
+
+.footer-email {
+    color: #2d3436;
+    /* A deep, dark charcoal grey */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footer-email:hover {
+    color: #0984e3;
+    /* Changes back to your accent blue when hovered */
+    text-decoration: underline;
+}
+
+.profile-pic {
+    width: 150px;
+    /* Sets the width */
+    height: 150px;
+    /* Sets the height (keep these the same for a circle) */
+    border-radius: 50%;
+    /* This is the magic that makes it a circle */
+    object-fit: cover;
+    /* Ensures your face isn't "squashed" if the photo wasn't a square */
+    margin-bottom: 20px;
+    border: 3px solid #ffffff;
+    /* Adds a clean white border around the photo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Adds a very soft professional shadow */
+}
+
+.projects-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.projects-container h2 {
+    text-align: center;
+    color: #2b82d9;
+    /* Matching your blue header */
+    margin-bottom: 30px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    height: 160px;
+    background-color: #f4f4f4;
+    /* Placeholder color */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Add your actual screenshots here */
+#trash-project {
+    background-image: url('trash-demo.jpg');
+}
+
+#expense-tracker {
+    background-image: url('expense-demo.jpg');
+}
+
+#portfolio-site {
+    background-image: url('site-demo.jpg');
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.tech-stack {
+    display: block;
+    margin: 15px 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #2b82d9;
+    text-transform: uppercase;
+}
+
+.project-link {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
