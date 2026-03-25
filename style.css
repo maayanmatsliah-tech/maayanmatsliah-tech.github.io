@@ -1,196 +1,226 @@
+/* ============================================================
+   BASE: fonts, colors, and defaults that apply to the whole page
+   ============================================================ */
+
+/* Sets the font, text color, and subtle gradient background for every page */
 body {
     margin: 0;
-    padding: 80px 20px;
-    /* A very subtle blue-to-white gradient makes it look "designed" */
-    background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
-    /* "Inter" or System Sans-Serif is the gold standard for professional sites */
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: #2d3436;
     line-height: 1.7;
+    background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
 }
 
-.container {
-    max-width: 650px;
-    margin: 0 auto;
-    text-align: center;
-    /* This adds a very slight fade-in effect when the page loads */
-    animation: fadeIn 1.2s ease-in-out;
-}
-
-.profile-pic {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 4px solid #ffffff;
-    /* White ring */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    /* Soft shadow under the photo */
-}
-
-.name {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    /* Tighter letters look more premium */
-    margin-bottom: 5px;
-    color: #0984e3;
-    /* A vibrant professional blue */
-}
-
-.subtitle {
-    font-size: 1.1rem;
-    color: #636e72;
-    font-weight: 500;
-    margin-bottom: 40px;
-}
-
-.info-list {
-    text-align: left;
-    display: inline-block;
-    list-style: none;
-    /* No dots */
-    padding: 0;
-}
-
-.info-list li {
-    margin-bottom: 18px;
-    padding-left: 30px;
-    position: relative;
-    font-size: 1.05rem;
-}
-
-/* This adds a colorful "check" or "bullet" before each item */
-.info-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #0984e3;
-    font-weight: bold;
-}
-
+/* Removes underlines from links and adds a hover highlight effect */
 a {
     color: #0984e3;
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 2px solid rgba(9, 132, 227, 0.2);
     transition: all 0.2s ease;
 }
 
 a:hover {
-    background: rgba(9, 132, 227, 0.1);
-    border-bottom: 2px solid #0984e3;
-}
-
-.email {
-    margin-top: 60px;
-    font-weight: 600;
-    color: #b2bec3;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.email-container {
-    margin-top: 60px;
-    border-top: 1px solid #eee;
-    /* Keeps that nice separation line */
-    padding-top: 20px;
-}
-
-.footer-email {
-    color: #2d3436;
-    /* A deep, dark charcoal grey */
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
-}
-
-.footer-email:hover {
-    color: #0984e3;
-    /* Changes back to your accent blue when hovered */
     text-decoration: underline;
 }
 
-.profile-pic {
-    width: 150px;
-    /* Sets the width */
-    height: 150px;
-    /* Sets the height (keep these the same for a circle) */
+
+/* ============================================================
+   NAVIGATION: sticky bar that follows you as you scroll
+   ============================================================ */
+
+/* Keeps the nav fixed to the top and slightly frosted using backdrop-filter */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+nav .nav-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d3436;
+    text-decoration: none;
+}
+
+/* Lays out the nav links horizontally and removes default bullet points */
+nav .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav .nav-links a {
+    font-size: 14px;
+    color: #555;
+    font-weight: 400;
+}
+
+nav .nav-links a:hover {
+    color: #0984e3;
+    text-decoration: none;
+}
+
+
+/* ============================================================
+   HERO: the split layout with your photo and intro text
+   ============================================================ */
+
+/* Uses flexbox to place the photo and text side by side */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    padding: 72px 5% 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Keeps the photo from shrinking and makes it a circle */
+.hero-img {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    /* This is the magic that makes it a circle */
     object-fit: cover;
-    /* Ensures your face isn't "squashed" if the photo wasn't a square */
-    margin-bottom: 20px;
     border: 3px solid #ffffff;
-    /* Adds a clean white border around the photo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Adds a very soft professional shadow */
+    box-shadow: 0 0 0 6px #e8f1fb;
 }
 
-.projects-container {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 0 20px;
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 6px;
+    color: #0984e3;
 }
 
-.projects-container h2 {
+.hero-text .subtitle {
+    font-size: 1.1rem;
+    color: #0984e3;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.hero-text .bio {
+    font-size: 15px;
+    color: #555;
+    max-width: 480px;
+    margin-bottom: 24px;
+    line-height: 1.75;
+}
+
+/* Lays the buttons out in a row with spacing between them */
+.hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+
+/* ============================================================
+   BUTTONS: reusable styles for all the CTA buttons
+   ============================================================ */
+
+/* Base button style — shared padding, font, and rounded corners */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 9px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+/* Solid blue button for primary actions */
+.btn-primary {
+    background: #0984e3;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #0770c4;
+    text-decoration: none;
+}
+
+/* Outlined button for secondary actions */
+.btn-ghost {
+    border: 1px solid #e0e0e0;
+    color: #2d3436;
+    background: #fff;
+}
+
+.btn-ghost:hover {
+    border-color: #0984e3;
+    color: #0984e3;
+    text-decoration: none;
+}
+
+
+/* ============================================================
+   PROJECTS: alternating background section with a card grid
+   ============================================================ */
+
+/* Light grey background to visually separate this section from the hero */
+.projects-section {
+    background: #f7f9fc;
+    padding: 60px 5%;
+    max-width: 100%;
+}
+
+/* Centers the section heading text */
+.projects-section h2 {
     text-align: center;
-    color: #2b82d9;
-    /* Matching your blue header */
-    margin-bottom: 30px;
+    max-width: 1100px;
+    margin: 0 auto 32px;
 }
 
+/* auto-fill means cards will wrap automatically as the screen shrinks */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
+/* Each card has a border, rounded corners, and lifts on hover */
 .project-card {
     background: #fff;
     border: 1px solid #e0e0e0;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* The image area at the top of each card — uses your local image files */
 .project-image {
-    height: 160px;
+    height: 180px;
     background-color: #f4f4f4;
-    /* Placeholder color */
     background-size: cover;
     background-position: center;
 }
 
-/* Add your actual screenshots here */
-#trash-project {
-    background-image: url('marine_life_icon.jpg');
-}
-
-#expense-tracker {
-    background-image: url('expense-tracker.jpg');
-}
-
-#portfolio-site {
-    background-image: url('self_site.png');
-}
+#trash-project    { background-image: url('marine_life_icon.jpg'); }
+#expense-tracker  { background-image: url('expense-tracker.jpg'); }
+#portfolio-site   { background-image: url('self_site.png'); }
 
 .project-info {
     padding: 20px;
@@ -198,31 +228,109 @@ a:hover {
 
 .project-info h3 {
     margin: 0 0 10px 0;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .project-info p {
     font-size: 0.9rem;
     color: #555;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin-bottom: 14px;
 }
 
 .tech-stack {
     display: block;
-    margin: 15px 0;
+    margin-bottom: 14px;
     font-size: 0.8rem;
-    font-weight: bold;
-    color: #2b82d9;
-    text-transform: uppercase;
+    font-weight: 700;
+    color: #0984e3;
 }
 
 .project-link {
-    text-decoration: none;
-    font-weight: 600;
-    color: #333;
     font-size: 0.9rem;
+    font-weight: 600;
+    color: #0984e3;
 }
 
-.project-link:hover {
-    text-decoration: underline;
+
+/* ============================================================
+   CONTACT: centered section at the bottom of the page
+   ============================================================ */
+
+/* White background to contrast with the grey projects section above */
+.contact-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.contact-bio {
+    font-size: 16px;
+    color: #555;
+    max-width: 480px;
+    margin: 0 auto 28px;
+}
+
+/* Keeps the contact buttons centered and wraps them on small screens */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+
+/* ============================================================
+   SHARED UTILITIES: labels, footer, and animations
+   ============================================================ */
+
+/* Small uppercase label that appears above each section heading */
+.section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #0984e3;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 32px;
+    color: #2d3436;
+}
+
+footer {
+    text-align: center;
+    font-size: 13px;
+    color: #b2bec3;
+    padding: 24px 5%;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Fade-in animation used on the hero section when the page loads */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ============================================================
+   RESPONSIVE: adjustments for small screens (phones)
+   ============================================================ */
+
+/* On screens narrower than 700px, stack the hero vertically and center it */
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .hero-ctas {
+        justify-content: center;
+    }
 }

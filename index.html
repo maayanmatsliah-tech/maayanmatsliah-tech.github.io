@@ -5,69 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maayan Matsliah | Portfolio</title>
+    <!-- Links to your separate stylesheet -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://fav.farm/💻">
 </head>
 
 <body>
-    <div class="container">
-        <img src="me.png" alt="Maayan Matsliah" class="profile-pic">
-        <h1 class="name">Maayan Matsliah</h1>
-        <p class="subtitle">Computer Science @ Northeastern • AI Concentration</p>
 
-        <ul class="info-list">
-            <li>Student in <strong>Computer Science</strong> at Northeastern University</li>
-            <li>Concentration in <strong>Artificial Intelligence</strong></li>
-            <li>Tech industry interests available on <a
-                    href="https://www.linkedin.com/in/maayan-matsliah-a523b3353/">LinkedIn</a></li>
-            <li>Code and projects available on <a href="https://github.com/maayanmatsliah-tech">GitHub</a></li>
+    <!-- NAVIGATION: sticky bar at the top with your name and anchor links -->
+    <nav>
+        <a class="nav-name" href="#">Maayan Matsliah</a>
+        <ul class="nav-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+    </nav>
 
-        <section class="projects-container">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image" id="trash-project"></div>
-                    <div class="project-info">
-                        <h3>Trash vs. Marine Life</h3>
-                        <p>An AI-driven classifier to identify ocean pollutants and their impact on marine ecosystems.
-                        </p>
-                        <span class="tech-stack">Python • PyTorch • Computer Vision</span>
-                        <a href="https://github.com/maayanmatsliah-tech/Creature-vs-Trash" class="project-link"
-                            target="_blank">View on GitHub →</a>
-                    </div>
-                </div>
+    <!-- HERO: the split layout — photo on left, text on right -->
+    <div class="hero">
+        <img src="me.png" alt="Maayan Matsliah" class="hero-img">
+        <div class="hero-text">
+            <h1>Maayan Matsliah</h1>
+            <p class="subtitle">Computer Science @ Northeastern &nbsp;·&nbsp; AI Concentration</p>
+            <p class="bio">CS student at Northeastern University building at the intersection of software engineering and artificial intelligence. Check out my work below.</p>
+            <!-- CTA buttons linking to your real profiles -->
+            <div class="hero-ctas">
+                <a class="btn btn-primary" href="https://www.linkedin.com/in/maayan-matsliah-a523b3353/" target="_blank">LinkedIn</a>
+                <a class="btn btn-ghost" href="https://github.com/maayanmatsliah-tech" target="_blank">GitHub</a>
+                <a class="btn btn-ghost" href="mailto:maayan.matsliah@gmail.com">Email me</a>
+            </div>
+        </div>
+    </div>
 
-                <div class="project-card">
-                    <div class="project-image" id="expense-tracker"></div>
-                    <div class="project-info">
-                        <h3>Expense Tracker</h3>
-                        <p>A full-stack application for managing personal finances while studying in Greece with
-                            real-time data visualization.</p>
-                        <span class="tech-stack">React • Node.js • MongoDB</span>
-                        <a href="https://github.com/maayanmatsliah-tech/Greece-Expense-Tracker" class="project-link"
-                            target="_blank">View on GitHub →</a>
-                    </div>
-                </div>
+    <!-- PROJECTS: grid of cards, each with an image, description, and GitHub link -->
+    <section class="projects-section" id="projects">
+        <p class="section-label">Work</p>
+        <h2>Projects</h2>
+        <div class="project-grid">
 
-                <div class="project-card">
-                    <div class="project-image" id="portfolio-site"></div>
-                    <div class="project-info">
-                        <h3>Personal Portfolio</h3>
-                        <p>The source code for this website, focusing on clean UI/UX and responsive design.</p>
-                        <span class="tech-stack">HTML • CSS • JavaScript</span>
-                        <a href="https://github.com/maayanmatsliah-tech/Personal_site" class="project-link"
-                            target="_blank">View on GitHub →</a>
-                    </div>
+            <div class="project-card">
+                <!-- Image pulled from your local file, same as before -->
+                <div class="project-image" id="trash-project"></div>
+                <div class="project-info">
+                    <h3>Trash vs. Marine Life</h3>
+                    <p>An AI-driven classifier to identify ocean pollutants and their impact on marine ecosystems.</p>
+                    <span class="tech-stack">Python · PyTorch · Computer Vision</span>
+                    <a href="https://github.com/maayanmatsliah-tech/Creature-vs-Trash" class="project-link" target="_blank">View on GitHub →</a>
                 </div>
             </div>
-        </section>
 
-        <p class="email-container">
-            <a href="mailto:maayan.matsliah@gmail.com" class="footer-email">maayan.matsliah@gmail.com</a>
-        </p>
-    </div>
+            <div class="project-card">
+                <div class="project-image" id="expense-tracker"></div>
+                <div class="project-info">
+                    <h3>Expense Tracker</h3>
+                    <p>A full-stack app for managing personal finances while studying in Greece, with real-time data visualization.</p>
+                    <span class="tech-stack">React · Node.js · MongoDB</span>
+                    <a href="https://github.com/maayanmatsliah-tech/Greece-Expense-Tracker" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image" id="portfolio-site"></div>
+                <div class="project-info">
+                    <h3>Personal Portfolio</h3>
+                    <p>The source code for this website, focusing on clean UI/UX and responsive design.</p>
+                    <span class="tech-stack">HTML · CSS · JavaScript</span>
+                    <a href="https://github.com/maayanmatsliah-tech/Personal_site" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT: centered section with email and social links -->
+    <section class="contact-section" id="contact">
+        <p class="section-label">Contact</p>
+        <h2>Get in touch</h2>
+        <p class="contact-bio">Open to co-op and internship opportunities. Feel free to reach out!</p>
+        <div class="contact-links">
+            <a class="btn btn-primary" href="mailto:maayan.matsliah@gmail.com">maayan.matsliah@gmail.com</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/maayan-matsliah-a523b3353/" target="_blank">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://github.com/maayanmatsliah-tech" target="_blank">GitHub</a>
+        </div>
+    </section>
+
+    <footer>© 2026 Maayan Matsliah</footer>
+
 </body>
-
-
 </html>
