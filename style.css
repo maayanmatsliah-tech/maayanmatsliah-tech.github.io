@@ -369,3 +369,8 @@ footer {
 .oss-item:hover { background: #f9fafb; }
 
 .oss-repo-owner { color: #6b7280; }
+
+.oss-stars {
+    font-size: 13px;
+    color: #6b7280;
+}
