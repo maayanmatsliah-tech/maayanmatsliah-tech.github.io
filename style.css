@@ -334,3 +334,38 @@ footer {
         justify-content: center;
     }
 }
+
+/* Open Source Section */
+#open-source {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  padding: 0 2rem;
+}
+
+#open-source .section-label {
+  /* reuse your existing section-label style automatically */
+}
+
+.oss-list {
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.oss-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+
+.oss-item:last-child { border-bottom: none; }
+.oss-item:hover { background: #f9fafb; }
+
+.oss-repo-owner { color: #6b7280; }
