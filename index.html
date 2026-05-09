@@ -17,6 +17,7 @@
         <a class="nav-name" href="#">Maayan Matsliah</a>
         <ul class="nav-links">
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#open-source">Open Source</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -76,13 +77,15 @@
 
         </div>
     </section>
-    <!-- Open Source Contributions -->
+
+    <!-- OPEN SOURCE: scrollable list of repos with merged PRs -->
     <section id="open-source">
-    <h2>Open Source</h2>
-    <p>Repositories I've contributed to</p>
-    <div class="oss-list" id="oss-list">
-        <p id="oss-status">Loading contributions…</p>
-    </div>
+        <p class="section-label">Community</p>
+        <h2>Open Source</h2>
+        <p>Repositories I've contributed to</p>
+        <div class="oss-list" id="oss-list">
+            <p id="oss-status">Loading contributions…</p>
+        </div>
     </section>
 
     <!-- CONTACT: centered section with email and social links -->
@@ -98,6 +101,41 @@
     </section>
 
     <footer>© 2026 Maayan Matsliah</footer>
+
+    <script>
+    (async () => {
+        const list = document.getElementById('oss-list');
+        document.getElementById('oss-status')?.remove();
+        try {
+            const res = await fetch(
+                'https://api.github.com/search/issues?q=author:maayanmatsliah-tech+type:pr+is:merged+-user:maayanmatsliah-tech&per_page=100',
+                { headers: { Accept: 'application/vnd.github+json' } }
+            );
+            const data = await res.json();
+            const seen = new Set();
+            for (const item of (data.items || [])) {
+                const parts = item.repository_url.split('/');
+                const owner = parts[parts.length - 2];
+                const name  = parts[parts.length - 1];
+                const key   = `${owner}/${name}`;
+                if (seen.has(key)) continue;
+                seen.add(key);
+                const a = document.createElement('a');
+                a.className = 'oss-item';
+                a.href = `https://github.com/${key}`;
+                a.target = '_blank';
+                a.rel = 'noopener';
+                a.innerHTML = `<span><span class="oss-repo-owner">${owner} / </span>${name}</span><span>↗</span>`;
+                list.appendChild(a);
+            }
+            if (seen.size === 0) {
+                list.innerHTML = '<p style="padding:16px;color:#6b7280">No merged PRs to show yet.</p>';
+            }
+        } catch {
+            list.innerHTML = '<p style="padding:16px;color:#6b7280">Could not load contributions.</p>';
+        }
+    })();
+    </script>
 
 </body>
 </html>
