@@ -1,173 +1,157 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maayan Matsliah | Portfolio</title>
-    <!-- Links to your separate stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="https://fav.farm/💻" />
-  </head>
 
-  <body>
-    <!-- NAVIGATION: sticky bar at the top with your name and anchor links -->
-    <nav>
-      <a class="nav-name" href="#">Maayan Matsliah</a>
-      <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#open-source">Open Source</a></li>
-        <li><a href="#writing">Writing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maayan Matsliah | Portfolio</title>
+  <!-- Links to your separate stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://fav.farm/💻" />
+</head>
 
-    <!-- HERO: the split layout — photo on left, text on right -->
-    <div class="hero">
-      <img src="me.png" alt="Maayan Matsliah" class="hero-img" />
-      <div class="hero-text">
-        <h1>Maayan Matsliah</h1>
-        <p class="subtitle">
-          Computer Science @ Northeastern &nbsp;·&nbsp; AI Concentration
-        </p>
-        <p class="bio">
-          CS student at Northeastern University interested in building and using
-          systems to improve our understanding of the world around us. Check out
-          my work below.
-        </p>
-        <!-- CTA buttons linking to your real profiles -->
-        <div class="hero-ctas">
-          <a
-            class="btn btn-primary"
-            href="https://www.linkedin.com/in/maayan-matsliah-a523b3353/"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <a
-            class="btn btn-ghost"
-            href="https://github.com/maayanmatsliah-tech"
-            target="_blank"
-            >GitHub</a
-          >
-          <a class="btn btn-ghost" href="mailto:maayan.matsliah@gmail.com"
-            >Email me</a
-          >
+<body>
+  <!-- NAVIGATION: sticky bar at the top with your name and anchor links -->
+  <nav>
+    <a class="nav-name" href="#">Maayan Matsliah</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#open-source">Open Source</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO: the split layout — photo on left, text on right -->
+  <div class="hero">
+    <img src="me.png" alt="Maayan Matsliah" class="hero-img" />
+    <div class="hero-text">
+      <h1>Maayan Matsliah</h1>
+      <p class="subtitle">
+        Computer Science @ Northeastern &nbsp;·&nbsp; AI Concentration
+      </p>
+      <p class="bio">
+        CS student at Northeastern University interested in building and using
+        systems to improve our understanding of the world around us. Check out
+        my work below.
+      </p>
+      <!-- CTA buttons linking to your real profiles -->
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/maayan-matsliah-a523b3353/"
+          target="_blank">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/maayanmatsliah-tech" target="_blank">GitHub</a>
+        <a class="btn btn-ghost" href="mailto:maayan.matsliah@gmail.com">Email me</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS: grid of cards, each with an image, description, and GitHub link -->
+  <section class="projects-section" id="projects">
+    <p class="section-label">Work</p>
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <!-- Image pulled from your local file, same as before -->
+        <div class="project-image" id="trash-project"></div>
+        <div class="project-info">
+          <h3>Trash vs. Marine Life</h3>
+          <p>
+            An AI-driven classifier to identify ocean pollutants and their
+            impact on marine ecosystems.
+          </p>
+          <span class="tech-stack">Python · PyTorch · Computer Vision</span>
+          <a href="https://github.com/maayanmatsliah-tech/Creature-vs-Trash" class="project-link" target="_blank">View
+            on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image" id="expense-tracker"></div>
+        <div class="project-info">
+          <h3>Expense Tracker</h3>
+          <p>
+            A full-stack app for managing personal finances while studying in
+            Greece, with real-time data visualization.
+          </p>
+          <span class="tech-stack">Python · HTML · Flask</span>
+          <a href="https://github.com/maayanmatsliah-tech/Greece-Expense-Tracker" class="project-link"
+            target="_blank">View on GitHub →</a>
+          <a href="https://greece-expense-tracker.onrender.com/" class="project-link" target="_blank">View on Render
+            →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image" id="portfolio-site"></div>
+        <div class="project-info">
+          <h3>Personal Portfolio</h3>
+          <p>
+            The source code for this website, focusing on clean UI/UX and
+            responsive design.
+          </p>
+          <span class="tech-stack">HTML · CSS · JavaScript</span>
+          <a href="https://github.com/maayanmatsliah-tech/maayanmatsliah-tech.github.io" class="project-link"
+            target="_blank">View on GitHub →</a>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- PROJECTS: grid of cards, each with an image, description, and GitHub link -->
-    <section class="projects-section" id="projects">
-      <p class="section-label">Work</p>
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <!-- Image pulled from your local file, same as before -->
-          <div class="project-image" id="trash-project"></div>
-          <div class="project-info">
-            <h3>Trash vs. Marine Life</h3>
-            <p>
-              An AI-driven classifier to identify ocean pollutants and their
-              impact on marine ecosystems.
-            </p>
-            <span class="tech-stack">Python · PyTorch · Computer Vision</span>
-            <a
-              href="https://github.com/maayanmatsliah-tech/Creature-vs-Trash"
-              class="project-link"
-              target="_blank"
-              >View on GitHub →</a
-            >
-          </div>
-        </div>
+  <!-- OPEN SOURCE: scrollable list of repos with merged PRs -->
+  <section id="open-source">
+    <p class="section-label">Community</p>
+    <h2>Open Source</h2>
+    <p>
+      I enjoy contributing to the open source community — here are the
+      projects that have had my PRs merged.
+    </p>
+    <div class="oss-list" id="oss-list">
+      <p id="oss-status">Loading contributions…</p>
+    </div>
+  </section>
 
-        <div class="project-card">
-          <div class="project-image" id="expense-tracker"></div>
-          <div class="project-info">
-            <h3>Expense Tracker</h3>
-            <p>
-              A full-stack app for managing personal finances while studying in
-              Greece, with real-time data visualization.
-            </p>
-            <span class="tech-stack">Python · HTML · Flask</span>
-            <a
-              href="https://github.com/maayanmatsliah-tech/Greece-Expense-Tracker"
-              class="project-link"
-              target="_blank"
-              >View on GitHub →</a
-            >
-            <a
-              href="https://greece-expense-tracker.onrender.com/"
-              class="project-link"
-              target="_blank"
-              >View on Render →</a
-            >
-          </div>
-        </div>
+  <!-- NUSCI ARTICLES: published writing for Northeastern's science magazine -->
+  <section id="writing">
+    <p class="section-label">Writing</p>
+    <h2>NUSci Articles</h2>
+    <p class="nusci-description">I'm passionate about exploring how technology shapes the world around us — writing for
+      NUSci lets me combine that curiosity with research and science communication.</p>
+    <div class="nusci-grid">
 
-        <div class="project-card">
-          <div class="project-image" id="portfolio-site"></div>
-          <div class="project-info">
-            <h3>Personal Portfolio</h3>
-            <p>
-              The source code for this website, focusing on clean UI/UX and
-              responsive design.
-            </p>
-            <span class="tech-stack">HTML · CSS · JavaScript</span>
-            <a
-              href="https://github.com/maayanmatsliah-tech/maayanmatsliah-tech.github.io"
-              class="project-link"
-              target="_blank"
-              >View on GitHub →</a
-            >
-          </div>
+      <!-- Article 1 -->
+      <div class="nusci-card">
+        <div class="nusci-meta">
+          <span class="nusci-tag nusci-tag-tech">Technology</span>
+          <span class="nusci-tag nusci-tag-opinion">Opinion</span>
+          <span class="nusci-tag nusci-tag-issue">Issue 67</span>
+          <span class="nusci-date">Mar 17, 2026</span>
         </div>
+        <p class="nusci-title">Opinion: Why the Computer Science degree matters more than ever</p>
+        <p class="nusci-excerpt">The 21st century doesn't mark the death of the CS major — it marks the evolution of a
+          programmer's role from syntax translator to systematic architect. Those who stay in the field are those ready
+          to work alongside large language models.</p>
+        <a class="nusci-link"
+          href="https://www.nuscimagazine.com/opinion-why-the-computer-science-degree-matters-more-than-ever"
+          target="_blank" rel="noopener">Read on NUSci ↗</a>
       </div>
-    </section>
 
-    <!-- OPEN SOURCE: scrollable list of repos with merged PRs -->
-    <section id="open-source">
-      <p class="section-label">Community</p>
-      <h2>Open Source</h2>
-      <p>
-        I enjoy contributing to the open source community — here are the
-        projects that have had my PRs merged.
-      </p>
-      <div class="oss-list" id="oss-list">
-        <p id="oss-status">Loading contributions…</p>
+      <!-- Article 2 -->
+      <div class="nusci-card">
+        <div class="nusci-meta">
+          <span class="nusci-tag nusci-tag-phil">Philosophy</span>
+          <span class="nusci-tag nusci-tag-issue">Issue 68</span>
+          <span class="nusci-date">Apr 7, 2026</span>
+        </div>
+        <p class="nusci-title">Multipliers of human capability: Inventions that charted the way to AGI</p>
+        <p class="nusci-excerpt">Innovation is a consistent process of offloading biological limitations — digestion,
+          memory, muscle, and now cognition — onto external systems. From fire to the transistor, each breakthrough
+          paved the way for artificial general intelligence.</p>
+        <a class="nusci-link"
+          href="https://www.nuscimagazine.com/multipliers-of-human-capability-inventions-that-charted-the-way-to-agi"
+          target="_blank" rel="noopener">Read on NUSci ↗</a>
       </div>
-    </section>
 
-    <!-- NUSCI ARTICLES: published writing for Northeastern's science magazine -->
-    <section id="writing">
-      <p class="section-label">Writing</p>
-      <h2>NUSci Articles</h2>
-      <div class="nusci-grid">
-
-        <!-- Article 1 -->
-        <div class="nusci-card">
-          <div class="nusci-meta">
-            <span class="nusci-tag nusci-tag-tech">Technology</span>
-            <span class="nusci-tag nusci-tag-opinion">Opinion</span>
-            <span class="nusci-tag nusci-tag-issue">Issue 67</span>
-            <span class="nusci-date">Mar 17, 2026</span>
-          </div>
-          <p class="nusci-title">Opinion: Why the Computer Science degree matters more than ever</p>
-          <p class="nusci-excerpt">The 21st century doesn't mark the death of the CS major — it marks the evolution of a programmer's role from syntax translator to systematic architect. Those who stay in the field are those ready to work alongside large language models.</p>
-          <a class="nusci-link" href="https://www.nuscimagazine.com/opinion-why-the-computer-science-degree-matters-more-than-ever" target="_blank" rel="noopener">Read on NUSci ↗</a>
-        </div>
-
-        <!-- Article 2 -->
-        <div class="nusci-card">
-          <div class="nusci-meta">
-            <span class="nusci-tag nusci-tag-phil">Philosophy</span>
-            <span class="nusci-tag nusci-tag-issue">Issue 68</span>
-            <span class="nusci-date">Apr 7, 2026</span>
-          </div>
-          <p class="nusci-title">Multipliers of human capability: Inventions that charted the way to AGI</p>
-          <p class="nusci-excerpt">Innovation is a consistent process of offloading biological limitations — digestion, memory, muscle, and now cognition — onto external systems. From fire to the transistor, each breakthrough paved the way for artificial general intelligence.</p>
-          <a class="nusci-link" href="https://www.nuscimagazine.com/multipliers-of-human-capability-inventions-that-charted-the-way-to-agi" target="_blank" rel="noopener">Read on NUSci ↗</a>
-        </div>
-
-        <!-- To add a new article, copy this block and fill in the fields:
+      <!-- To add a new article, copy this block and fill in the fields:
 
         <div class="nusci-card">
           <div class="nusci-meta">
@@ -182,109 +166,99 @@
 
         -->
 
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT: centered section with email and social links -->
-    <section class="contact-section" id="contact">
-      <p class="section-label">Contact</p>
-      <h2>Get in touch</h2>
-      <p class="contact-bio">
-        Open to co-op and internship opportunities. Feel free to reach out!
-      </p>
-      <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:maayan.matsliah@gmail.com"
-          >maayan.matsliah@gmail.com</a
-        >
-        <a
-          class="btn btn-ghost"
-          href="https://www.linkedin.com/in/maayan-matsliah-a523b3353/"
-          target="_blank"
-          >LinkedIn</a
-        >
-        <a
-          class="btn btn-ghost"
-          href="https://github.com/maayanmatsliah-tech"
-          target="_blank"
-          >GitHub</a
-        >
-      </div>
-    </section>
+  <!-- CONTACT: centered section with email and social links -->
+  <section class="contact-section" id="contact">
+    <p class="section-label">Contact</p>
+    <h2>Get in touch</h2>
+    <p class="contact-bio">
+      Open to co-op and internship opportunities. Feel free to reach out!
+    </p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:maayan.matsliah@gmail.com">maayan.matsliah@gmail.com</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/maayan-matsliah-a523b3353/"
+        target="_blank">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/maayanmatsliah-tech" target="_blank">GitHub</a>
+    </div>
+  </section>
 
-    <footer>© 2026 Maayan Matsliah</footer>
+  <footer>© 2026 Maayan Matsliah</footer>
 
-    <script>
-      (async () => {
-        const list = document.getElementById("oss-list");
-        document.getElementById("oss-status")?.remove();
-        try {
-          const res = await fetch(
-            "https://api.github.com/search/issues?q=author:maayanmatsliah-tech+type:pr+is:merged+-user:maayanmatsliah-tech&per_page=100",
-            { headers: { Accept: "application/vnd.github+json" } },
-          );
-          const data = await res.json();
+  <script>
+    (async () => {
+      const list = document.getElementById("oss-list");
+      document.getElementById("oss-status")?.remove();
+      try {
+        const res = await fetch(
+          "https://api.github.com/search/issues?q=author:maayanmatsliah-tech+type:pr+is:merged+-user:maayanmatsliah-tech&per_page=100",
+          { headers: { Accept: "application/vnd.github+json" } },
+        );
+        const data = await res.json();
 
-          // Deduplicate repos
-          const seen = new Set();
-          const repos = [];
-          for (const item of data.items || []) {
-            const parts = item.repository_url.split("/");
-            const owner = parts[parts.length - 2];
-            const name = parts[parts.length - 1];
-            const key = `${owner}/${name}`;
-            if (seen.has(key)) continue;
-            seen.add(key);
-            repos.push({
-              key,
-              owner,
-              name,
-              repoUrl: item.repository_url,
-              stars: 0,
-            });
-          }
-
-          if (repos.length === 0) {
-            list.innerHTML =
-              '<p style="padding:16px;color:#6b7280">No merged PRs to show yet.</p>';
-            return;
-          }
-
-          // Fetch star counts in parallel
-          await Promise.all(
-            repos.map(async (r) => {
-              try {
-                const rRes = await fetch(r.repoUrl, {
-                  headers: { Accept: "application/vnd.github+json" },
-                });
-                const rData = await rRes.json();
-                r.stars = rData.stargazers_count || 0;
-              } catch {
-                r.stars = 0;
-              }
-            }),
-          );
-
-          // Sort by stars descending
-          repos.sort((a, b) => b.stars - a.stars);
-
-          for (const r of repos) {
-            const a = document.createElement("a");
-            a.className = "oss-item";
-            a.href = `https://github.com/${r.key}`;
-            a.target = "_blank";
-            a.rel = "noopener";
-            const stars =
-              r.stars > 0
-                ? `<span class="oss-stars">★ ${r.stars.toLocaleString()}</span>`
-                : "";
-            a.innerHTML = `<span><span class="oss-repo-owner">${r.owner} / </span>${r.name}</span><span style="display:flex;align-items:center;gap:12px">${stars}<span>↗</span></span>`;
-            list.appendChild(a);
-          }
-        } catch {
-          list.innerHTML =
-            '<p style="padding:16px;color:#6b7280">Could not load contributions.</p>';
+        // Deduplicate repos
+        const seen = new Set();
+        const repos = [];
+        for (const item of data.items || []) {
+          const parts = item.repository_url.split("/");
+          const owner = parts[parts.length - 2];
+          const name = parts[parts.length - 1];
+          const key = `${owner}/${name}`;
+          if (seen.has(key)) continue;
+          seen.add(key);
+          repos.push({
+            key,
+            owner,
+            name,
+            repoUrl: item.repository_url,
+            stars: 0,
+          });
         }
-      })();
-    </script>
-  </body>
+
+        if (repos.length === 0) {
+          list.innerHTML =
+            '<p style="padding:16px;color:#6b7280">No merged PRs to show yet.</p>';
+          return;
+        }
+
+        // Fetch star counts in parallel
+        await Promise.all(
+          repos.map(async (r) => {
+            try {
+              const rRes = await fetch(r.repoUrl, {
+                headers: { Accept: "application/vnd.github+json" },
+              });
+              const rData = await rRes.json();
+              r.stars = rData.stargazers_count || 0;
+            } catch {
+              r.stars = 0;
+            }
+          }),
+        );
+
+        // Sort by stars descending
+        repos.sort((a, b) => b.stars - a.stars);
+
+        for (const r of repos) {
+          const a = document.createElement("a");
+          a.className = "oss-item";
+          a.href = `https://github.com/${r.key}`;
+          a.target = "_blank";
+          a.rel = "noopener";
+          const stars =
+            r.stars > 0
+              ? `<span class="oss-stars">★ ${r.stars.toLocaleString()}</span>`
+              : "";
+          a.innerHTML = `<span><span class="oss-repo-owner">${r.owner} / </span>${r.name}</span><span style="display:flex;align-items:center;gap:12px">${stars}<span>↗</span></span>`;
+          list.appendChild(a);
+        }
+      } catch {
+        list.innerHTML =
+          '<p style="padding:16px;color:#6b7280">Could not load contributions.</p>';
+      }
+    })();
+  </script>
+</body>
+
 </html>
