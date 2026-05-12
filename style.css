@@ -393,14 +393,14 @@ footer {
   text-align: center;
   font-size: 15px;
   color: #555;
-  max-width: 560px;
+  max-width: 700px;
   margin: -16px auto 36px;
   line-height: 1.75;
 }
 
 .nusci-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1px;
   border: 1px solid #e0e0e0;
   border-radius: 14px;
@@ -411,11 +411,10 @@ footer {
   background: #fff;
   padding: 24px 28px;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
+  flex-direction: column;
+  gap: 8px;
   transition: background 0.2s ease;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: none;
 }
 
 .nusci-card:last-child {
@@ -479,4 +478,8 @@ footer {
 
 .nusci-link:hover {
   text-decoration: underline;
+}
+
+.nusci-card:first-child {
+  border-right: 1px solid #e0e0e0;
 }
