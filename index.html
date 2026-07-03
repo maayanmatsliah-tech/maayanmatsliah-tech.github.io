@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maayan Matsliah | Portfolio</title>
   <!-- Links to your separate stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/styles/style.css" />
   <link rel="icon" href="https://fav.farm/💻" />
 </head>
 
@@ -16,6 +16,7 @@
     <a class="nav-name" href="#">Maayan Matsliah</a>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#open-source">Open Source</a></li>
       <li><a href="#writing">Writing</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -24,7 +25,7 @@
 
   <!-- HERO: the split layout — photo on left, text on right -->
   <div class="hero">
-    <img src="me.png" alt="Maayan Matsliah" class="hero-img" />
+    <img src="assets/images/me.png" alt="Maayan Matsliah" class="hero-img" />
     <div class="hero-text">
       <h1>Maayan Matsliah</h1>
       <p class="subtitle">
@@ -40,7 +41,8 @@
         <a class="btn btn-primary" href="https://www.linkedin.com/in/maayan-matsliah-a523b3353/"
           target="_blank">LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/maayanmatsliah-tech" target="_blank">GitHub</a>
-        <a class="btn btn-ghost" href="mailto:maayan.matsliah@gmail.com">Email me</a>
+        <a class="btn btn-ghost" href="assets/Maayan_Matsliah_Resume.docx" download>Download résumé</a>
+        <a class="btn btn-ghost" href="mailto:matsliah.m@northeastern.edu">Email me</a>
       </div>
     </div>
   </div>
@@ -50,6 +52,21 @@
     <p class="section-label">Work</p>
     <h2>Projects</h2>
     <div class="project-grid">
+      <div class="project-card">
+        <div class="project-image" id="citation-graph"></div>
+        <div class="project-info">
+          <h3>Citation Graph Analysis</h3>
+          <p>
+            A data pipeline that streams and stores 250M+ academic citation
+            records from S3 snapshots and REST APIs into a local database, then
+            tests a hypothesis: did mutual paper citations rise after ChatGPT's
+            release — i.e. did AI speed up research discovery?
+          </p>
+          <span class="tech-stack">Python · SQL · DuckDB · OpenAlex API</span>
+          <a href="https://github.com/maayanmatsliah-tech" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
+
       <div class="project-card">
         <!-- Image pulled from your local file, same as before -->
         <div class="project-image" id="trash-project"></div>
@@ -97,13 +114,80 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE: research roles, fellowship, and education/credentials -->
+  <section class="experience-section" id="experience">
+    <p class="section-label">Background</p>
+    <h2>Experience</h2>
+    <div class="exp-grid">
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <h3>Intern Mentor &amp; Logistics Lead</h3>
+          <span class="exp-date">2023 – 2026</span>
+        </div>
+        <p class="exp-org">Princeton Neuroscience Institute · FlyWire</p>
+        <p class="exp-detail">
+          Mapped neural connectivity for the BANC connectomics dataset —
+          identifying neuron and synapse properties on the Codex AI platform —
+          and mentored the incoming intern cohort on hands-on data analysis
+          while owning end-to-end program logistics.
+        </p>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <h3>AI/ML Fellow</h3>
+          <span class="exp-date">2026 – 2027</span>
+        </div>
+        <p class="exp-org">Break Through Tech</p>
+        <p class="exp-detail">
+          Selected for a year-long AI program applying industry-relevant tools
+          to real-world datasets, including a Machine Learning Foundations
+          certification through Cornell University's eCornell.
+        </p>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <h3>Staff Writer</h3>
+          <span class="exp-date">2026</span>
+        </div>
+        <p class="exp-org">NUSci Magazine</p>
+        <p class="exp-detail">
+          Write on the evolving CS degree and the drivers of AGI for the
+          magazine's full readership, with work selected for the print edition.
+          Read the articles below.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Education & credentials strip -->
+    <div class="credentials">
+      <div class="cred-main">
+        <h3>Northeastern University</h3>
+        <p>B.S. in Computer Science, AI Concentration &nbsp;·&nbsp; Expected May 2029</p>
+      </div>
+      <ul class="cred-list">
+        <li><strong>3.9</strong> / 4.0 GPA</li>
+        <li>Dean's List, 2026</li>
+        <li>Break Through Tech AI/ML Fellow</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- OPEN SOURCE: scrollable list of repos with merged PRs -->
   <section id="open-source">
     <p class="section-label">Community</p>
     <h2>Open Source</h2>
     <p>
-      I enjoy contributing to the open source community — here are the
-      projects that have had my PRs merged.
+      Since January 2026 I've contributed refactors, bug fixes, and
+      documentation to production codebases with 200–700+ stars — including
+      Microsoft's <strong>rag-experiment-accelerator</strong>,
+      <strong>python-humanize/humanize</strong>, and the
+      <strong>Munich Quantum Toolkit</strong> — working through maintainers'
+      code-review cycles to get changes merged. The full list of repos with my
+      merged PRs is below, pulled live from GitHub.
     </p>
     <div class="oss-list" id="oss-list">
       <p id="oss-status">Loading contributions…</p>
@@ -177,10 +261,11 @@
       Open to co-op and internship opportunities. Feel free to reach out!
     </p>
     <div class="contact-links">
-      <a class="btn btn-primary" href="mailto:maayan.matsliah@gmail.com">maayan.matsliah@gmail.com</a>
+      <a class="btn btn-primary" href="mailto:matsliah.m@northeastern.edu">matsliah.m@northeastern.edu</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/maayan-matsliah-a523b3353/"
         target="_blank">LinkedIn</a>
       <a class="btn btn-ghost" href="https://github.com/maayanmatsliah-tech" target="_blank">GitHub</a>
+      <a class="btn btn-ghost" href="assets/Maayan_Matsliah_Resume.docx" download>Download résumé</a>
     </div>
   </section>
 

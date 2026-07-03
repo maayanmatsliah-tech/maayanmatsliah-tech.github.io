@@ -218,9 +218,28 @@ nav .nav-links a:hover {
     background-position: center;
 }
 
-#trash-project    { background-image: url('marine_life_icon.jpg'); }
-#expense-tracker  { background-image: url('expense-tracker.jpg'); }
-#portfolio-site   { background-image: url('self_site.png'); }
+#trash-project    { background-image: url('../images/marine_life_icon.jpg'); }
+#expense-tracker  { background-image: url('../images/expense-tracker.jpg'); }
+#portfolio-site   { background-image: url('../images/self_site.png'); }
+
+/* Gradient placeholder tile for the citation graph project (no photo) */
+#citation-graph {
+    background-image: linear-gradient(135deg, #0984e3 0%, #2d6cc0 55%, #163a6e 100%);
+    position: relative;
+}
+#citation-graph::after {
+    content: "{ 250M+ citations }";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
 
 .project-info {
     padding: 20px;
@@ -333,6 +352,125 @@ footer {
     .hero-ctas {
         justify-content: center;
     }
+}
+
+/* ============================================================
+   EXPERIENCE: research roles, fellowship, and credentials
+   ============================================================ */
+
+.experience-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 5%;
+}
+
+.experience-section h2 {
+    text-align: center;
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.exp-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-left: 3px solid #0984e3;
+    border-radius: 12px;
+    padding: 22px 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.exp-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.exp-head h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.exp-date {
+    font-size: 0.78rem;
+    color: #b2bec3;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.exp-org {
+    margin: 4px 0 10px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #0984e3;
+}
+
+.exp-detail {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Education / credentials strip */
+.credentials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #e8f4fd;
+    border: 1px solid #c5dff7;
+    border-radius: 12px;
+    padding: 22px 28px;
+}
+
+.cred-main h3 {
+    margin: 0 0 4px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.cred-main p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.cred-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cred-list li {
+    background: #fff;
+    border: 1px solid #c5dff7;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    color: #0770c4;
+    font-weight: 500;
+}
+
+.cred-list li strong {
+    font-weight: 700;
 }
 
 /* Open Source Section */
