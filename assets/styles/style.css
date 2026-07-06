@@ -220,7 +220,6 @@ nav .nav-links a:hover {
 
 #trash-project    { background-image: url('../images/marine_life_icon.jpg'); }
 #expense-tracker  { background-image: url('../images/expense-tracker.jpg'); }
-#portfolio-site   { background-image: url('../images/self_site.png'); }
 
 /* Gradient placeholder tile for the citation graph project (no photo) */
 #citation-graph {
@@ -228,7 +227,7 @@ nav .nav-links a:hover {
     position: relative;
 }
 #citation-graph::after {
-    content: "{ 250M+ citations }";
+    content: "{ 1975–2025 · OpenAlex }";
     position: absolute;
     inset: 0;
     display: flex;

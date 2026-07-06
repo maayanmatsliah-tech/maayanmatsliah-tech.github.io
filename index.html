@@ -57,13 +57,19 @@
         <div class="project-info">
           <h3>Citation Graph Analysis</h3>
           <p>
-            A data pipeline that streams and stores 250M+ academic citation
-            records from S3 snapshots and REST APIs into a local database, then
-            tests a hypothesis: did mutual paper citations rise after ChatGPT's
-            release — i.e. did AI speed up research discovery?
+            An analysis of 50 years of OpenAlex data (1975–2025) on how a paper's
+            interdisciplinarity relates to mutual citations — pairs of papers
+            that cite each other. Grouping papers by field diversity and tracking
+            their reciprocal-citation rates year over year, the analysis finds
+            that the more fields a paper cites, the less likely any single
+            citation is returned, and that mutual citation has declined across
+            every diversity group even as research grows more interdisciplinary —
+            a trend that holds after excluding author self-citations and survives
+            structural-break significance testing.
           </p>
-          <span class="tech-stack">Python · SQL · DuckDB · OpenAlex API</span>
-          <a href="https://github.com/maayanmatsliah-tech" class="project-link" target="_blank">View on GitHub →</a>
+          <span class="tech-stack">Python · DuckDB · SQL · SciPy · OpenAlex</span>
+          <a href="https://github.com/maayanmatsliah-tech/Citation-Graph-Analysis" class="project-link"
+            target="_blank">View on GitHub →</a>
         </div>
       </div>
 
@@ -98,19 +104,6 @@
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-image" id="portfolio-site"></div>
-        <div class="project-info">
-          <h3>Personal Portfolio</h3>
-          <p>
-            The source code for this website, focusing on clean UI/UX and
-            responsive design.
-          </p>
-          <span class="tech-stack">HTML · CSS · JavaScript</span>
-          <a href="https://github.com/maayanmatsliah-tech/maayanmatsliah-tech.github.io" class="project-link"
-            target="_blank">View on GitHub →</a>
-        </div>
-      </div>
     </div>
   </section>
 
