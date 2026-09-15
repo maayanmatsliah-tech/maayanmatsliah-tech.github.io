@@ -431,7 +431,7 @@ h2 {
 }
 
 #citation-graph::after {
-  content: "{ 1975–2023 · OpenAlex · DuckDB }";
+  content: "{ 1975–2023 · OpenAlex · 131M Papers }";
   position: absolute;
   inset: 0;
   display: flex;
