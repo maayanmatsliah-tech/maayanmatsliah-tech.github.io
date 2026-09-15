@@ -50,6 +50,13 @@ nav .nav-name {
     text-decoration: none;
 }
 
+/* Groups navigation links and the action button on the right */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
 /* Lays out the nav links horizontally and removes default bullet points */
 nav .nav-links {
     display: flex;
@@ -68,6 +75,32 @@ nav .nav-links a {
 nav .nav-links a:hover {
     color: #0984e3;
     text-decoration: none;
+}
+
+/* Distinct compact resume CTA in the navigation bar */
+.btn-resume-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    color: #0984e3;
+    background: #e8f4fd;
+    border: 1px solid #c5dff7;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-resume-nav:hover {
+    background: #0984e3;
+    color: #ffffff;
+    border-color: #0984e3;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(9, 132, 227, 0.2);
 }
 
 
@@ -342,6 +375,36 @@ footer {
 
 /* On screens narrower than 700px, stack the hero vertically and center it */
 @media (max-width: 700px) {
+    nav {
+        height: auto;
+        padding: 12px 5%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    nav .nav-links {
+        gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+    }
+
+    nav .nav-links a {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .btn-resume-nav {
+        padding: 5px 11px;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+
     .hero {
         flex-direction: column;
         text-align: center;
