@@ -75,24 +75,28 @@
     <p class="section-label">Work</p>
     <h2>Projects</h2>
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card" data-project="citation-graph">
         <div class="project-image" id="citation-graph"></div>
         <div class="project-info">
           <h3>Citation Graph Analysis</h3>
           <p>
-            An analysis of 50 years of OpenAlex data on how a paper's
-            interdisciplinarity relates to mutual citations — pairs of papers
-            that cite each other. Grouping papers by field diversity, it finds
-            that the more fields a paper cites, the less likely any citation is
-            reciprocated — a decline that holds across every group over time.
+            Using OpenAlex citation data from 1975 to 2023 to measure reciprocation linkage across scientific
+            literature, this analysis reveals an ~88% drop in mean mutual citations per paper and a ~95% drop in the
+            pooled rate. Contrary to expectations, interdisciplinary papers (citing 3+ fields) exceeded
+            non-interdisciplinary papers across a central band of reference-count deciles (10–46 references, ~58% of the
+            corpus), reciprocating up to 17% more.
           </p>
           <span class="tech-stack">Python · DuckDB · SQL · SciPy · OpenAlex</span>
-          <a href="https://github.com/maayanmatsliah-tech/Citation-Graph-Analysis" class="project-link"
-            target="_blank">View on GitHub →</a>
+          <div class="project-actions">
+            <button type="button" class="btn-deep-dive" data-project="citation-graph">Deep Dive &amp; Architecture
+              →</button>
+            <a href="https://github.com/maayanmatsliah-tech/Citation-Graph-Analysis" class="project-link"
+              target="_blank" rel="noopener">GitHub →</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-project="marine-trash">
         <!-- Image pulled from your local file, same as before -->
         <div class="project-image" id="trash-project"></div>
         <div class="project-info">
@@ -102,12 +106,16 @@
             impact on marine ecosystems.
           </p>
           <span class="tech-stack">Python · PyTorch · Computer Vision</span>
-          <a href="https://github.com/maayanmatsliah-tech/Creature-vs-Trash" class="project-link" target="_blank">View
-            on GitHub →</a>
+          <div class="project-actions">
+            <button type="button" class="btn-deep-dive" data-project="marine-trash">Deep Dive &amp; Architecture
+              →</button>
+            <a href="https://github.com/maayanmatsliah-tech/Creature-vs-Trash" class="project-link" target="_blank"
+              rel="noopener">GitHub →</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-project="expense-tracker">
         <div class="project-image" id="expense-tracker"></div>
         <div class="project-info">
           <h3>Savings Made Simple</h3>
@@ -116,10 +124,14 @@
             Greece, with real-time data visualization.
           </p>
           <span class="tech-stack">Python · HTML · Flask</span>
-          <a href="https://github.com/maayanmatsliah-tech/Greece-Expense-Tracker" class="project-link"
-            target="_blank">View on GitHub →</a>
-          <a href="https://greece-expense-tracker.onrender.com/" class="project-link" target="_blank">View on Render
-            →</a>
+          <div class="project-actions">
+            <button type="button" class="btn-deep-dive" data-project="expense-tracker">Deep Dive &amp; Architecture
+              →</button>
+            <a href="https://github.com/maayanmatsliah-tech/Greece-Expense-Tracker" class="project-link" target="_blank"
+              rel="noopener">GitHub →</a>
+            <a href="https://greece-expense-tracker.onrender.com/" class="project-link" target="_blank"
+              rel="noopener">Live Demo →</a>
+          </div>
         </div>
       </div>
 
@@ -282,7 +294,192 @@
     </div>
   </section>
 
+  <!-- PROJECT DEEP-DIVE MODAL -->
+  <div id="project-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="modal-title">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-header-titles">
+            <span class="modal-badge" id="modal-badge">Architecture Deep Dive</span>
+            <h2 class="modal-title" id="modal-title">Project Title</h2>
+            <p class="modal-subtitle" id="modal-subtitle">Project Subtitle</p>
+          </div>
+          <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="6"></line>
+            </svg>
+            <span class="esc-hint">ESC</span>
+          </button>
+        </div>
+
+        <div class="modal-tags" id="modal-tags">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-section">
+            <h4 class="modal-section-title">
+              <span class="section-num">01</span> The Problem &amp; Dataset
+            </h4>
+            <div class="modal-section-content" id="modal-problem"></div>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-section-title">
+              <span class="section-num">02</span> System Architecture &amp; Pipeline
+            </h4>
+            <div class="modal-section-content" id="modal-architecture"></div>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-section-title">
+              <span class="section-num">03</span> Engineering Obstacles &amp; Trade-Offs
+            </h4>
+            <div class="modal-section-content" id="modal-obstacles"></div>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-section-title">
+              <span class="section-num">04</span> Key Empirical Takeaways &amp; Metrics
+            </h4>
+            <div class="modal-section-content modal-metrics-highlight" id="modal-metrics"></div>
+          </div>
+        </div>
+
+        <div class="modal-footer" id="modal-footer-links">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>© 2026 Maayan Matsliah</footer>
+
+  <!-- Deep Dive Modal Controller Script -->
+  <script>
+    const projectDetails = {
+      "citation-graph": {
+        badge: "Empirical Research · Data Pipeline",
+        title: "Citation Graph Analysis",
+        subtitle: "48-Year Longitudinal Network Analysis (1975–2023) · OpenAlex & DuckDB",
+        tags: ["Python", "DuckDB", "Vectorized SQL", "SciPy", "OpenAlex S3", "Graph Theory"],
+        problem: `Mutual citation – a pair of publications that cite each other – provides a foundational measure of reciprocation linkage within scientific literature. Using OpenAlex citation data from 1975 to 2023, this study asked two questions: <strong>(1) How has the rate at which papers reciprocate citations changed over five decades?</strong> and <strong>(2) Are interdisciplinary papers reciprocated less frequently than single-field papers?</strong> Contrary to expectations that search engines and digital indexing would increase reciprocation, mutual linkage has experienced a massive secular decline.`,
+        architecture: `Architected a high-throughput local analytical pipeline in Python and DuckDB to process multi-gigabyte partitioned Parquet snapshots from OpenAlex. Vectorized SQL queries extracted directed graph edges and computed bidirectional pair linkages (<em>A → B ∧ B → A</em>). Computed field diversity indices across paper reference lists, stratifying papers across reference-count deciles to eliminate list-length confounding without requiring expensive distributed cluster overhead.`,
+        obstacles: `<strong>Memory-Constrained Graph Self-Joins:</strong> Processing hundreds of millions of citation pairs locally risked memory saturation. Overcame this via chunked partition streaming, columnar projection pruning, and DuckDB's out-of-core execution engine.<br><br><strong>Self-Citation Disentanglement:</strong> Filtered author and institutional self-citations across multi-author papers without computationally prohibitive <em>O(N²)</em> cross-table joins.<br><br><strong>Distribution Normalization:</strong> Stratified reference list lengths across deciles (from 3 to 5,000 references) and conducted structural-break significance testing to confirm observed trends were structurally sound.`,
+        metrics: `• <strong>~88% Drop in Mean Mutual Citations:</strong> Mean mutual citations per paper fell by ~88%, and the pooled mutual-citation rate fell by ~95% between 1975 and 2023.<br>• <strong>Interdisciplinary Advantage:</strong> Papers citing 3+ fields exceeded 1–2 field papers by up to <strong>17%</strong> across a central band of six reference-count deciles (10–46 references, representing ~58% of the corpus).<br>• <strong>Convergence &amp; Tails:</strong> The two groups converged at 47–64 references (0.6% gap), with non-interdisciplinary papers leading only at the extreme tails (3–9 and 65–5,000 references).`,
+        links: [
+          { text: "View on GitHub ↗", url: "https://github.com/maayanmatsliah-tech/Citation-Graph-Analysis", primary: true }
+        ]
+      },
+      "marine-trash": {
+        badge: "Computer Vision · Deep Learning",
+        title: "Trash vs. Marine Life",
+        subtitle: "Automated Underwater Object Detection & Environmental Telemetry",
+        tags: ["Python", "PyTorch", "Torchvision", "OpenCV", "Convolutional Neural Networks", "Data Augmentation"],
+        problem: `Marine debris and discarded synthetic pollutants pose critical threats to aquatic biodiversity. Autonomous cleanup drones, underwater ROVs, and sensor buoys require robust computer vision to automatically detect and distinguish marine wildlife (fish, sea turtles, corals) from ocean pollutants (plastics, ghost nets, metal cans) in harsh sub-surface environments.`,
+        architecture: `Engineered an end-to-end deep learning classification and localization pipeline using PyTorch and Torchvision. Leveraged transfer learning with pre-trained convolutional backbones fine-tuned for underwater marine imagery. Developed a modular video preprocessing pipeline with OpenCV for automated frame extraction, adaptive bounding-box cropping, and batch inference.`,
+        obstacles: `<strong>Optical Degradation &amp; Scattering:</strong> Underwater optics suffer from extreme turbidity, backscatter, suspended particulate noise, and non-uniform wavelength absorption (rapid loss of red/warm spectrum). Implemented domain-specific image preprocessing with adaptive contrast equalization and chromatic jitter augmentations.<br><br><strong>Severe Class Imbalance:</strong> In natural marine environments, biological organisms heavily outnumber pollutant debris. Addressed class skew using class-weighted cross-entropy loss and focal loss to prevent the network from ignoring minority pollutant classes.`,
+        metrics: `• Elevated minority pollutant recall significantly while preserving high precision on aquatic wildlife.<br>• Optimized model weights for edge inference, ensuring frame-rate compatibility with low-power embedded processors on autonomous marine drones.`,
+        links: [
+          { text: "View on GitHub ↗", url: "https://github.com/maayanmatsliah-tech/Creature-vs-Trash", primary: true }
+        ]
+      },
+      "expense-tracker": {
+        badge: "Full-Stack Engineering · Cloud Deployment",
+        title: "Savings Made Simple",
+        subtitle: "Multi-Currency Personal Finance & Travel Budget Telemetry",
+        tags: ["Python", "Flask", "PostgreSQL / SQLite", "Chart.js", "REST APIs", "Render CI/CD"],
+        problem: `Managing multi-currency international expenses while studying abroad across Greece and Europe creates significant financial telemetry challenges—fluctuating foreign exchange rates, distinct spending categories, and inconsistent payment methods. Existing apps are either paywalled or lack streamlined mobile input on roaming data.`,
+        architecture: `Engineered a full-stack Flask web application backed by a normalized relational database schema (SQLite locally, PostgreSQL in production). Integrated dynamic client-side charting with Chart.js to provide real-time category breakdowns and budget burn-down visualizations on the fly.`,
+        obstacles: `<strong>Dynamic FX Conversion &amp; Caching:</strong> Integrated real-time foreign exchange rate conversion with local caching to prevent rate-limiting against third-party financial APIs.<br><br><strong>Mobile UX under Constrained Bandwidth:</strong> Designed an ultra-lightweight, zero-bloat mobile touch interface for rapid, low-friction expense input while traveling with intermittent connectivity.`,
+        metrics: `• Zero-downtime automated deployment on Render with integrated GitHub build triggers.<br>• Sub-second latency on transaction logging and visual budget analytics, successfully managing personal travel expenses across multiple countries.`,
+        links: [
+          { text: "View on GitHub ↗", url: "https://github.com/maayanmatsliah-tech/Greece-Expense-Tracker", primary: false },
+          { text: "Live Demo on Render ↗", url: "https://greece-expense-tracker.onrender.com/", primary: true }
+        ]
+      }
+    };
+
+    const modal = document.getElementById("project-modal");
+    const modalBadge = document.getElementById("modal-badge");
+    const modalTitle = document.getElementById("modal-title");
+    const modalSubtitle = document.getElementById("modal-subtitle");
+    const modalTags = document.getElementById("modal-tags");
+    const modalProblem = document.getElementById("modal-problem");
+    const modalArchitecture = document.getElementById("modal-architecture");
+    const modalObstacles = document.getElementById("modal-obstacles");
+    const modalMetrics = document.getElementById("modal-metrics");
+    const modalFooterLinks = document.getElementById("modal-footer-links");
+    const closeBtn = document.getElementById("modal-close-btn");
+
+    function openProjectModal(projectId) {
+      const data = projectDetails[projectId];
+      if (!data) return;
+
+      modalBadge.textContent = data.badge;
+      modalTitle.textContent = data.title;
+      modalSubtitle.textContent = data.subtitle;
+
+      modalTags.innerHTML = data.tags
+        .map(tag => `<span class="modal-tag">${tag}</span>`)
+        .join("");
+
+      modalProblem.innerHTML = data.problem;
+      modalArchitecture.innerHTML = data.architecture;
+      modalObstacles.innerHTML = data.obstacles;
+      modalMetrics.innerHTML = data.metrics;
+
+      modalFooterLinks.innerHTML = data.links
+        .map(link => `<a href="${link.url}" target="_blank" rel="noopener" class="btn ${link.primary ? 'btn-primary' : 'btn-ghost'}">${link.text}</a>`)
+        .join("");
+
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+
+    function closeProjectModal() {
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    // Attach click listeners to Deep Dive buttons
+    document.querySelectorAll(".btn-deep-dive").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const projectId = btn.getAttribute("data-project");
+        openProjectModal(projectId);
+      });
+    });
+
+    // Also allow clicking on project cards directly
+    document.querySelectorAll(".project-card").forEach(card => {
+      card.addEventListener("click", (e) => {
+        if (e.target.closest("a") || e.target.closest(".btn-deep-dive")) return;
+        const projectId = card.getAttribute("data-project");
+        openProjectModal(projectId);
+      });
+    });
+
+    closeBtn.addEventListener("click", closeProjectModal);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal || e.target.classList.contains("modal-dialog")) {
+        closeProjectModal();
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("active")) {
+        closeProjectModal();
+      }
+    });
+  </script>
 
   <script>
     (async () => {
